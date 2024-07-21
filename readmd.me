@@ -1,0 +1,148 @@
+## Titanic Survival Prediction Web Application
+
+This is a Flask-based web application that predicts whether a passenger would have survived the Titanic disaster based on their personal information. The prediction is made using a pre-trained machine learning model.
+
+## Table of Contents
+
+- [Installation](#installation)
+- [Usage](#usage)
+- [API Endpoints](#api-endpoints)
+- [Running the Application](#running-the-application)
+- [Testing](#testing)
+- [Contributing](#contributing)
+- [License](#license)
+
+## Installation
+
+### Prerequisites
+
+- Python 3.7+
+- Flask
+- Pandas
+- Scikit-learn
+- Numpy
+
+### Steps
+
+1. **Clone the repository:**
+
+    ```bash
+    git clone https://github.com/yourusername/titanic-prediction.git
+    cd titanic-prediction
+    ```
+
+2. **Create a virtual environment and activate it:**
+
+    ```bash
+    python -m venv venv
+    source venv/bin/activate  # On Windows use `venv\Scripts\activate`
+    ```
+
+3. **Install the dependencies:**
+
+    ```bash
+    pip install -r requirements.txt
+    ```
+
+4. **Download the pre-trained model:**
+
+    Place your pre-trained model file (`model.pkl`) in the project directory.
+
+## Usage
+
+### API Endpoints
+
+- **POST /predict**
+
+    Predicts survival based on input features.
+
+    **Request:**
+    ```json
+    {
+        "Pclass": 1,
+        "Sex": "female",
+        "Age": 22,
+        "SibSp": 1,
+        "Parch": 0,
+        "Fare": 71
+    }
+    ```
+
+    **Response:**
+    ```json
+    {
+        "survived": 1
+    }
+    ```
+
+## Running the Application
+
+1. **Start the Flask server:**
+
+    ```bash
+    python app.py
+    ```
+
+2. **Access the web application:**
+
+    Open your web browser and navigate to `http://127.0.0.1:5000`.
+
+## Testing
+
+### Using Postman
+
+1. **Open Postman.**
+2. **Create a new POST request:**
+
+    - URL: `http://127.0.0.1:5000/predict`
+    - Body: Select `raw` and `JSON` format
+    - Example JSON:
+    ```json
+    {
+        "Pclass": 1,
+        "Sex": "female",
+        "Age": 22,
+        "SibSp": 1,
+        "Parch": 0,
+        "Fare": 71
+    }
+    ```
+
+3. **Send the request and check the response.**
+
+### Using the Web Form
+
+1. **Fill in the form with passenger details.**
+2. **Submit the form to see the prediction result.**
+
+## Contributing
+
+1. **Fork the repository.**
+2. **Create a new branch:**
+
+    ```bash
+    git checkout -b feature-branch
+    ```
+
+3. **Make your changes.**
+4. **Commit your changes:**
+
+    ```bash
+    git commit -m "Add a feature"
+    ```
+
+5. **Push to the branch:**
+
+    ```bash
+    git push origin feature-branch
+    ```
+
+6. **Open a pull request.**
+
+## License
+
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+
+## Contact
+
+For any issues or questions, please open an issue or contact me at [your-email@example.com].
